@@ -10,7 +10,7 @@ export default {
     onClick: { action: 'onClick' },   
     theme: {
       control: {type: 'select'},
-      options: ['primary', 'secondary', 'danger'],
+      options: ['primary', 'secondary', 'tertiary','danger'],
     },
     size: {
       control: { type: 'select' },
