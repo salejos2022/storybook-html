@@ -1,48 +1,82 @@
+import { type } from '@testing-library/user-event/dist/type';
 import { createButton } from './Button';
 
 // More on default export: https://storybook.js.org/docs/html/writing-stories/introduction#default-export
 export default {
   title: 'Example/Button',
   // More on argTypes: https://storybook.js.org/docs/html/api/argtypes
-  argTypes: {
-    backgroundColor: { control: 'color' },
+  argTypes: {    
     label: { control: 'text' },
-    onClick: { action: 'onClick' },
-    primary: { control: 'boolean' },
+    onClick: { action: 'onClick' },   
+    theme: {
+      control: {type: 'select'},
+      options: ['primary', 'secondary', 'danger'],
+    },
     size: {
       control: { type: 'select' },
-      options: ['small', 'medium', 'large'],
+      options: ['small', 'medium'],
     },
   },
 };
 
 // More on component templates: https://storybook.js.org/docs/html/writing-stories/introduction#using-args
-const Template = ({ label, ...args }) => {
+const Template = ({ label, theme, onClick, ...args }) => {
   // You can either use a function to create DOM elements or use a plain html string!
   // return `<div>${label}</div>`;
-  return createButton({ label, ...args });
+  return createButton({ label, theme, onClick, ...args });
 };
 
 export const Primary = Template.bind({});
 // More on args: https://storybook.js.org/docs/html/writing-stories/args
 Primary.args = {
-  primary: true,
-  label: 'Button',
+  theme: "primary",  
+  label: 'Button',   
+  onClick: function show() {
+    alert("You clicked on the button, so it triggered the alert box");
+  },
 };
 
 export const Secondary = Template.bind({});
 Secondary.args = {
+  theme: "secondary",
   label: 'Button',
+  onClick: function show() {
+    alert("You clicked on the button, so it triggered the alert box");
+  },
 };
 
-export const Large = Template.bind({});
-Large.args = {
-  size: 'large',
+export const Tertiary = Template.bind({});
+Tertiary.args = {
+  theme: "tertiary",
   label: 'Button',
+  onClick: function show() {
+    alert("You clicked on the button, so it triggered the alert box");
+  },
+};
+
+export const Danger = Template.bind({});
+Danger.args = {
+  theme: "danger",
+  label: 'Button',
+  onClick: function show() {
+    alert("You clicked on the button, so it triggered the alert box");
+  },
 };
 
 export const Small = Template.bind({});
 Small.args = {
   size: 'small',
   label: 'Button',
+  onClick: function show() {
+    alert("You clicked on the button, so it triggered the alert box");
+  },
+};
+
+export const Medium = Template.bind({});
+Medium.args = {
+  size: 'medium',
+  label: 'Button',
+  onClick: function show() {
+    alert("You clicked on the button, so it triggered the alert box");
+  },
 };
