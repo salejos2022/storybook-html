@@ -9,7 +9,7 @@ export const createButton = ({
   const btn = document.createElement('button');
   btn.type = 'button';
   btn.innerText = label;
-  btn.addEventListener('click', onClick);
+  btn.addEventListener('click', onClick); 
 
   const mode = `buttonTheme--${theme}`;  
   btn.className = ['button', `button--${size}`, mode].join(' ');
