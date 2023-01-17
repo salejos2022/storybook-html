@@ -3,18 +3,19 @@ import './input.css';
 export const createInput = ({
     type = 'text',
     placeholder,
-    value, 
+    value="", 
     id, 
-    icon="",    
+    icon="", 
+    size= "medium",      
 }) => {    
     const input = document.createElement('input');    
     input.type = type;
     input.placeholder = placeholder;  
     input.value= value,
-    input.id= id
+    input.id= id    
 
     const icons = icon ? `inputIcon--${icon}`: ``;   
-    input.className = ['input', icons].join(' ');
+    input.className = ['input', `input--${size}`, icons].join(' ');
     
     return input;
 };

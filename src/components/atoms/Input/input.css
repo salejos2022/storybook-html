@@ -1,10 +1,9 @@
-.input {  
-    width: 496px;
-    height: 36px;
+.input {      
     border: #C0C0C0 solid 1px;
     border-radius: 5px;
     padding-left: 8px;
-    padding-right: 8px;    
+    padding-right: 8px;  
+    margin: 4px 0px;
 }
 
 .inputIcon--icono{
@@ -12,3 +11,18 @@
     background: url("https://static.thenounproject.com/png/101791-200.png") no-repeat right;
     background-size: 36px;    
 }
+
+.input--small {
+    width: 240px;
+    height: 36px; 
+  }
+
+.input--medium {
+    width: 496px;
+    height: 36px;
+  }
+
+  .input--large {
+    width: 95.5%;
+    height: 36px;
+  }
